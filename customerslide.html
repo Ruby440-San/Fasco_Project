@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Overlapping Testimonial Slider</title>
+  <!-- Swiper CDN CSS -->
+ <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css">
+
+  <style>
+    * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.slider-container {
+  width: 100%;
+  max-width: 1000px;
+  position: relative;
+  padding: 60px 0;
+}
+
+/* Force Swiper container to look wide and hide layout leaks */
+.swiper {
+  width: 100%;
+  padding: 40px 0;
+  overflow: visible !important; /* Vital so scaled-up elements don't get clipped */
+}
+
+/* Individual Slide sizing */
+.swiper-slide {
+  width: 600px; /* Fixed card width */
+  transition: transform 0.4s ease, z-index 0.4s ease, opacity 0.4s ease;
+  transform: scale(0.85); /* Side cards are scaled down */
+  z-index: 1;
+  opacity: 1; /* Side cards look semi-transparent */
+}
+
+/* Active slide overrides (The prominent center card) */
+.swiper-slide-active {
+  transform: scale(1);
+  z-index: 10; /* Stack on top of left/right slides */
+  opacity: 1;
+}
+
+/* Testimonial Card UI Setup */
+.testimonial-card {
+  background: #ffffff;
+  border-radius: 8px;
+  display: flex;
+  padding: 40px;
+  gap: 30px;
+  align-items: center;
+  border: 1px solid #f0f0f0;
+  transition: box-shadow 0.4s ease;
+}
+
+/* Active card shadow depth elevation */
+.swiper-slide-active .testimonial-card {
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.06);
+}
+
+/* Inner Layout Elements */
+.avatar-wrapper {
+  position: relative;
+  flex-shrink: 0;
+}
+
+/* Decorative gray square behind the photo matching your image */
+/* .avatar-wrapper::before {
+  content: '';
+  position: absolute;
+  top: 15px;
+  left: -15px;
+  width: 130px;
+  height: 130px;
+  background-color: #e2e2e2;
+  z-index: -1;
+} */
+
+.avatar-wrapper img {
+  width: 130px;
+  height: 130px;
+  object-fit: cover;
+}
+
+.testimonial-content {
+  flex-grow: 1;
+}
+
+.quote {
+  color: #4a4a4a;
+  font-size: 15px;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.stars {
+  color: #ff9800;
+  font-size: 16px;
+  margin-bottom: 15px;
+  letter-spacing: 2px;
+}
+
+.name {
+  color: #222222;
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.role {
+  color: #888888;
+  font-size: 14px;
+}
+
+/* Navigation System Layout */
+.navigation-controls {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.nav-btn {
+  width: 44px;
+  height: 44px;
+  background: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #888888;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  user-select: none;
+  transition: background 0.2s;
+}
+
+.nav-btn:hover {
+  background: #f5f5f5;
+  color: #222222;
+}
+
+  </style>
+</head>
+<body>
+
+  <div class="slider-container">
+    <!-- Main Swiper Container -->
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+        
+        <!-- Slide 1 -->
+        <div class="swiper-slide">
+          <div class="testimonial-card">
+            <div class="avatar-wrapper">
+              <img src="images/image (1).png" alt="User 1">
+            </div>
+            <div class="testimonial-content">
+              <p class="quote">"I was looking for. Thank you for making it pleasant and most of all hassle free! All are great."</p>
+              <div class="stars">★★★★★</div>
+              <h3 class="name">Sarah W.</h3>
+              <p class="role">Business Owner</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 2 (Matches Your Image Center) -->
+        <div class="swiper-slide">
+          <div class="testimonial-card">
+            <div class="avatar-wrapper">
+              <img src="images/image (2).png" alt="User 2">
+            </div>
+            <div class="testimonial-content">
+              <p class="quote">"You won't regret it. I would like to personally thank you for your outstanding product. Absolutely wonderful!"</p>
+              <div class="stars">★★★★★</div>
+              <h3 class="name">James K.</h3>
+              <p class="role">Traveler</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="swiper-slide">
+          <div class="testimonial-card">
+            <div class="avatar-wrapper">
+              <img src="images/image (3).png" alt="User 3">
+            </div>
+            <div class="testimonial-content">
+              <p class="quote">"Exceptional customer service and brilliant features. Completely changed how we handle our workflow."</p>
+              <div class="stars">★★★★★</div>
+              <h3 class="name">Emma L.</h3>
+              <p class="role">Designer</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 1 -->
+        <div class="swiper-slide">
+          <div class="testimonial-card">
+            <div class="avatar-wrapper">
+              <img src="images/image (1).png" alt="User 1">
+            </div>
+            <div class="testimonial-content">
+              <p class="quote">"I was looking for. Thank you for making it pleasant and most of all hassle free! All are great."</p>
+              <div class="stars">★★★★★</div>
+              <h3 class="name">Sarah W.</h3>
+              <p class="role">Business Owner</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 2 (Matches Your Image Center) -->
+        <div class="swiper-slide">
+          <div class="testimonial-card">
+            <div class="avatar-wrapper">
+              <img src="images/image (2).png" alt="User 2">
+            </div>
+            <div class="testimonial-content">
+              <p class="quote">"You won't regret it. I would like to personally thank you for your outstanding product. Absolutely wonderful!"</p>
+              <div class="stars">★★★★★</div>
+              <h3 class="name">James K.</h3>
+              <p class="role">Traveler</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="swiper-slide">
+          <div class="testimonial-card">
+            <div class="avatar-wrapper">
+              <img src="images/image (3).png" alt="User 3">
+            </div>
+            <div class="testimonial-content">
+              <p class="quote">"Exceptional customer service and brilliant features. Completely changed how we handle our workflow."</p>
+              <div class="stars">★★★★★</div>
+              <h3 class="name">Emma L.</h3>
+              <p class="role">Designer</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Custom Bottom Navigation Controls -->
+    <div class="navigation-controls">
+      <div class="nav-btn custom-prev-btn">&#10094;</div>
+      <div class="nav-btn custom-next-btn">&#10095;</div>
+    </div>
+  </div>
+
+  <!-- Swiper CDN JS -->
+    <!-- FIXED: Changed href to src, and updated to the correct, full Swiper bundle URLs -->
+
+        <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+
+<script>
+    const swiper = new Swiper('.mySwiper', {
+      effect: 'coverflow',
+      grabCursor: true,
+      centeredSlides: true,
+      slidesPerView: 2,
+      loop: true,
+      navigation: {
+        nextEl: '.custom-next-btn',
+        prevEl: '.custom-prev-btn',
+      },
+      coverflowEffect: {
+        rotate: 0,
+        stretch: 380,
+        depth: 100,
+        modifier: 1,
+        slideShadows: false,
+      },
+     
+    });
+  </script>
+
+
+</body>
+</html>

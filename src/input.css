@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100..900;1,100..900&family=Sofia&family=Tangerine:wght@400;700&family=Volkhov:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+@import "tailwindcss";
+@plugin "daisyui";
+
+@layer base{
+  html{
+  font-family: "Poppins", serif;
+  font-weight: 400;
+  font-style: normal;
+  background-color: #cac2c2;
+  }
+  h2{
+  font-family: "Volkhov", serif;
+  font-weight: 400;
+  font-style: normal;
+  }
+  .timer{
+  font-family: "VT323", monospace;
+  font-weight: 400;
+  font-style: normal;
+  }
+}
+
+@layer components{
+  .heading{
+    @apply text-4xl mb-7 text-[#484848];
+  }
+  .testimonial-card{
+    @apply w-80 h-110 p-5 md:w-160 md:h-60 lg:w-full lg:h-75 xl:w-160 xl:h-60 
+    bg-white overflow-hidden shadow-2xl rounded-lg 
+    flex flex-col md:flex-row justify-start items-center;
+    }
+    .testimonial-card1{
+      @apply w-80 h-110 p-5 md:w-160 md:h-60 lg:w-full lg:h-75 xl:w-160 xl:h-80 
+    bg-white overflow-hidden shadow-2xl rounded-lg 
+      flex flex-col md:flex-row justify-start items-center;
+    }
+
+    .card-1{
+    @apply absolute top-0 left-0;
+    }
+
+    .card-2{
+    @apply absolute top-115 left-0 lg:top-80 xl:top-0 xl:left-0 xl:translate-x-65 xl:-translate-y-8 z-10;
+    }
+
+    .card-3{
+    @apply absolute top-230 left-0 md:top-130 lg:top-160 xl:top-0 xl:translate-x-110 z-20 xl:z-0;
+    }
+}
