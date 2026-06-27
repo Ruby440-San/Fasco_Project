@@ -1772,14 +1772,6 @@
   .ml-20 {
     margin-left: calc(var(--spacing) * 20);
   }
-  .carousel-item {
-    @layer daisyui.l1.l2.l3 {
-      box-sizing: content-box;
-      display: flex;
-      flex: none;
-      scroll-snap-align: start;
-    }
-  }
   .badge {
     @layer daisyui.l1.l2.l3 {
       display: inline-flex;
@@ -1800,20 +1792,6 @@
       --size: calc(var(--size-selector, 0.25rem) * 6);
       height: var(--size);
       padding-inline: calc(var(--size) / 2 - var(--border));
-    }
-  }
-  .carousel {
-    @layer daisyui.l1.l2.l3 {
-      display: inline-flex;
-      overflow-x: scroll;
-      scroll-snap-type: x mandatory;
-      scrollbar-width: none;
-      @media (prefers-reduced-motion: no-preference) {
-        scroll-behavior: smooth;
-      }
-      &::-webkit-scrollbar {
-        display: none;
-      }
     }
   }
   .prose {
@@ -2337,9 +2315,6 @@
   .object-cover {
     object-fit: cover;
   }
-  .object-\[10\%\] {
-    object-position: 10%;
-  }
   .object-top {
     object-position: top;
   }
@@ -2679,16 +2654,13 @@
     --tw-duration: 100ms;
     transition-duration: 100ms;
   }
+  .ease-in-out {
+    --tw-ease: var(--ease-in-out);
+    transition-timing-function: var(--ease-in-out);
+  }
   .ease-out {
     --tw-ease: var(--ease-out);
     transition-timing-function: var(--ease-out);
-  }
-  .btn-xs {
-    @layer daisyui.l1.l2 {
-      --fontsize: 0.6875rem;
-      --btn-p: 0.5rem;
-      --size: calc(var(--size-field, 0.25rem) * 6);
-    }
   }
   .btn-neutral {
     @layer daisyui.l1.l2.l3 {
@@ -2804,6 +2776,16 @@
   .sm\:grid-cols-2 {
     @media (width >= 40rem) {
       grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+  .md\:left-20 {
+    @media (width >= 48rem) {
+      left: calc(var(--spacing) * 20);
+    }
+  }
+  .md\:left-50 {
+    @media (width >= 48rem) {
+      left: calc(var(--spacing) * 50);
     }
   }
   .md\:m-8 {
@@ -3029,9 +3011,19 @@
       font-size: 7rem;
     }
   }
+  .lg\:left-5 {
+    @media (width >= 64rem) {
+      left: calc(var(--spacing) * 5);
+    }
+  }
   .lg\:left-25 {
     @media (width >= 64rem) {
       left: calc(var(--spacing) * 25);
+    }
+  }
+  .lg\:left-30 {
+    @media (width >= 64rem) {
+      left: calc(var(--spacing) * 30);
     }
   }
   .lg\:mt-10 {
@@ -3279,6 +3271,36 @@
   .xl\:left-3 {
     @media (width >= 80rem) {
       left: calc(var(--spacing) * 3);
+    }
+  }
+  .xl\:left-5 {
+    @media (width >= 80rem) {
+      left: calc(var(--spacing) * 5);
+    }
+  }
+  .xl\:left-6 {
+    @media (width >= 80rem) {
+      left: calc(var(--spacing) * 6);
+    }
+  }
+  .xl\:left-8 {
+    @media (width >= 80rem) {
+      left: calc(var(--spacing) * 8);
+    }
+  }
+  .xl\:left-10 {
+    @media (width >= 80rem) {
+      left: calc(var(--spacing) * 10);
+    }
+  }
+  .xl\:left-15 {
+    @media (width >= 80rem) {
+      left: calc(var(--spacing) * 15);
+    }
+  }
+  .xl\:left-25 {
+    @media (width >= 80rem) {
+      left: calc(var(--spacing) * 25);
     }
   }
   .xl\:left-48 {
@@ -3544,6 +3566,11 @@
   .xl\:\[clip-path\:polygon\(31\%_0\,100\%_0\%\,100\%_100\%\,10\%_100\%\)\] {
     @media (width >= 80rem) {
       clip-path: polygon(31% 0,100% 0%,100% 100%,10% 100%);
+    }
+  }
+  .\32 xl\:left-10 {
+    @media (width >= 96rem) {
+      left: calc(var(--spacing) * 10);
     }
   }
 }
