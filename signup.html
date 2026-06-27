@@ -4,25 +4,63 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="./src/output.css" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <title>SignUp</title>
 </head>
 <body>
-  <div class="container mx-auto min-h-175 px-5">
-    <div class="navbar bg-base-100">
-      <div class="flex-1">
-        <h2 class="btn btn-ghost text-3xl">FASCO</h2>
+  <div class="container mx-auto min-h-175 lg:px-20">
+    <div class="rounded-4xl shadow-2xl shadow-black">
+      <div class="navbar bg-base-100 rounded-t-4xl">
+        <div class="flex-1 m-5">
+          <h2 class="btn btn-ghost text-3xl">FASCO</h2>
+        </div>
+        <div class="flex flex-col md:flex-none animate-pulse">
+          <span class="text-sm md:m-8">
+            <h6>Already a member?</h6>
+            <a href="signin.html" class="text-sm text-yellow-300 ml-20 md:ml-3">Sign in</a></span>
+        </div>
       </div>
-      <div class="flex-none">
-        <span class="text-sm">Already a member?<a href="#" class="text-sm text-yellow-300 ml-3">Sign in</a></span>
-      </div>
-    </div>
 
-    <div>
-      <div>
-        <img src="images/up.gif" alt="">
+      <div class="container mx-auto p-10 pb-20">
+        <div class="flex flex-col-reverse gap-15 lg:flex-row lg:gap-0">
+          <div class="relative" data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine" data-aos-duration="1000">
+            <div class="w-70 h-90 xl:w-100 xl:h-95 bg-amber-600 shadow-2xl shadow-black"></div>
+            <img src="images/bg0.jpg" alt="" class="w-80 h-100 xl:w-90 xl:h-110 object-cover object-top absolute -top-8 left-10 shadow-2xl shadow-amber-950">
+            <h1 class="uppercase text-[4rem] font-extrabold tracking-wider text-transparent [-webkit-text-stroke:1px_#FFB300] [text-stroke:1px_#FFB300] lg:-mb-10 absolute top-25 left-42 xl:left-48 rotate-270 w-full">Sign up</h1>
+          </div>
+
+          <div class="lg:ml-30 w-full lg:w-1/2 mx-auto xl:ml-20" data-aos="fade-left" data-aos-offset="300" data-aos-easing="ease-in-sine" data-aos-duration="1000">
+            <div class="flex gap-3 border-2 py-2 rounded-4xl justify-center items-center lg:w-100 mb-5">
+              <img src="images/google.jfif" alt="" class="w-7 h-6 object-cover">
+              <span class="font-medium">Sign up with Google</span>
+            </div>
+            <form action="" class="text-md font-medium flex flex-col mb-5">
+              <span>Name</span>
+              <input type="text" id="" class="border-b border-gray-400 lg:w-100 outline-none px-2">
+            </form>
+            <form action="" class="text-md font-medium flex flex-col mb-5">
+              <span>Email</span>
+              <input type="email" id="" class="border-b border-gray-400 lg:w-100 outline-none px-2">
+            </form>
+            <form action="" class="text-md font-medium flex flex-col mb-5">
+              <span>Passwords</span>
+              <input type="password" id="" class="border-b border-gray-400 lg:w-100 outline-none px-2">
+            </form>
+
+            <div class="flex gap-3 items-center mb-10">
+              <input type="checkbox" id="" class="outline-2 outline-amber-600 w-3 h-3">
+              <h5 class="text-sm text-zinc-700">I agree to all the statements included in the <span class="text-amber-600 ml-5">Terms of services</span></h5>
+            </div>
+            <button class="uppercase px-20 lg:px-0 md:w-100 text-center text-zinc-400 tracking-wide bg-black rounded-4xl  hover:bg-amber-600 hover:text-black py-2">Create account</button>
+          </div>
+
+        </div>
       </div>
-      <div></div>
     </div>
   </div>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+  AOS.init();
+  </script>
 </body>
 </html>

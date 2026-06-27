@@ -58,7 +58,7 @@
           </svg>
           </button>
           <ul class="group dropdown menu w-100 rounded-box bg-transparent shadow-sm"  popover id="popover-1" style="position-anchor:--anchor-1">
-            <li><a class="group-hover:bg-gray-100 group-hover:text-white" href="#">Home</a></li>
+            <li><a class="group-hover:bg-gray-100 group-hover:text-white" href="index.html">Home</a></li>
             <li><a class="group-hover:bg-gray-100 group-hover:text-white" href="#deals">Shop</a></li>
             <li><a class="group-hover:bg-gray-100 group-hover:text-white" href="#new-arrivals">Products</a></li>
             <li><a class="group-hover:bg-gray-100 group-hover:text-white" href="#">Pages</a></li>
@@ -220,6 +220,7 @@
             </div>
           </div>
 
+          <!-- Image card1 -->
           <div class="w-2/3 px-20 mt-10 xl:mt-0 xl:px-0 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 xl:gap-5">
             <div class="w-60 h-105">
               <div class="w-60 h-80">
@@ -366,19 +367,23 @@
             </div>
 
           </div>
+
+          
+
         </div>
+        
       </div>
 
       <!-- Number Circle -->
       <div class="flex justify-center items-center gap-5 mt-10 md:pl-80">
-        <div class="active w-9 h-9 bg-gray-200 rounded-full flex justify-center items-center shadow-xl">1</div>
-        <div>2</div>
-        <div>3</div>
-        <div>
+        <button class="active w-9 h-9 bg-gray-200 rounded-full flex justify-center items-center shadow-xl" id="num-one">1</button>
+        <button id="num-two">2</button>
+        <button id="num-three">3</button>
+        <button>
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-3">
   <path stroke-linecap="round" stroke-linejoin="round" d="m5.25 4.5 7.5 7.5-7.5 7.5m6-15 7.5 7.5-7.5 7.5" />
           </svg>
-        </div>
+        </button>
       </div>
     </div>
    </section>
@@ -444,44 +449,44 @@
     </div>
 
   <!-- Follow us -->
-    <section>
-    <div class="flex flex-col justify-center items-center lg:gap-4 lg:px-40 lg:pt-20 lg:pb-10 mb-3 mt-5">
-      <h2 class="text-2xl text-[#484848] font-medium w-full mb-2 lg:text-4xl text-center">Follow Us On Instagram</h2>
-      <p class="text-center text-zinc-500 leading-relaxed max-w-xl">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolore animi non laudantium molestiae nisi. Consequuntur placeat, dolores?</p>
-    </div>
-      
-      <div class="mt-5 md:mt-15 grid grid-cols-1 sm:grid-cols-2 xl:flex xl:flex-row xl:gap-0 relative">
-        <div class="mx-auto xl:mx-0 my-1 w-70 h-60 md:w-100 md:h-120 md:px-3 xl:w-70 xl:h-60 xl:px-0">
-          <img src="images/image_2.png" class="w-full h-full object-cover" alt="">
-        </div>
+      <section class="mb-10 xl:mb-30">
+      <div class="flex flex-col justify-center items-center lg:gap-4 lg:px-40 lg:pt-20 lg:pb-10 mb-3">
+        <h2 class="text-2xl text-[#484848] font-medium w-full mb-2 lg:text-4xl text-center">Follow Us On Instagram</h2>
+        <p class="text-center text-zinc-500 leading-relaxed max-w-xl">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolore animi non laudantium molestiae nisi. Consequuntur placeat, dolores?</p>
+      </div>
+        
+        <div class="mt-5 md:mt-15 grid grid-cols-1 sm:grid-cols-2 xl:flex xl:flex-row xl:gap-0 relative" data-aos="zoom-in-right" data-aos-duration="1000">
+          <div class="mx-auto xl:mx-0 my-1 w-70 h-60 md:w-100 md:h-120 md:px-3 xl:w-70 xl:h-60 xl:px-0">
+            <img src="images/image_2.png" class="w-full h-full object-cover object-top xl:object-cover" alt="">
+          </div>
 
-        <div class="mx-auto xl:mx-0 my-1 w-70 h-60 xl:-mt-8 xl:w-65 xl:h-75 md:w-100 md:h-120 md:px-3 xl:px-0">
-          <img src="images/image-1_1.png" class="w-full h-full object-[10%]" alt="">
-        </div>
+          <div class="mx-auto xl:mx-0 my-1 w-70 h-60 xl:-mt-8 xl:w-65 xl:h-75 md:w-100 md:h-120 md:px-3 xl:px-0">
+            <img src="images/image-1_1.png" class="w-full h-full object-cover object-top xl:object-cover" alt="">
+          </div>
 
-        <div class="mx-auto xl:mx-0 my-1 w-70 h-60 md:w-100 md:h-120 md:px-3 xl:w-70 xl:h-60 xl:px-0">
-          <img src="images/image-4.png" class="w-full h-full object-cover" alt="">
-        </div>
+          <div class="mx-auto xl:mx-0 my-1 w-70 h-60 md:w-100 md:h-120 md:px-3 xl:w-70 xl:h-60 xl:px-0">
+            <img src="images/image-4.png" class="w-full h-full object-cover object-top xl:object-cover" alt="">
+          </div>
 
-        <div class="mx-auto xl:mx-0 my-1 w-70 h-60 xl:-mt-8 xl:w-65 xl:h-75 md:w-100 md:h-120 md:px-3 xl:px-0">
-          <img src="images/image-2.png" class="w-full h-full object-[10%]" alt="">
-        </div>
+          <div class="mx-auto xl:mx-0 my-1 w-70 h-60 xl:-mt-8 xl:w-65 xl:h-75 md:w-100 md:h-120 md:px-3 xl:px-0">
+            <img src="images/image-2.png" class="w-full h-full object-cover object-top xl:object-cover" alt="">
+          </div>
 
-        <div class="mx-auto xl:mx-0 my-1 w-70 h-60 md:w-100 md:h-120 md:px-3 xl:w-70 xl:h-60 xl:px-0">
-          <img src="images/image-5.png" class="w-full h-full object-cover" alt="">
-        </div>
+          <div class="mx-auto xl:mx-0 my-1 w-70 h-60 md:w-100 md:h-120 md:px-3 xl:w-70 xl:h-60 xl:px-0">
+            <img src="images/image-5.png" class="w-full h-full object-cover object-top xl:object-cover" alt="">
+          </div>
 
-        <div class="mx-auto xl:mx-0 my-1 w-70 h-60 xl:-mt-8 xl:w-65 xl:h-75 md:w-100 md:h-120 md:px-3 xl:px-0">
-          <img src="images/image-3.png" class="w-full h-full object-[10%]" alt="">
-        </div>
+          <div class="mx-auto xl:mx-0 my-1 w-70 h-60 xl:-mt-8 xl:w-65 xl:h-75 md:w-100 md:h-120 md:px-3 xl:px-0">
+            <img src="images/image-3.png" class="w-full h-full object-cover object-top xl:object-cover" alt="">
+          </div>
 
 
-        <div class="md:hidden mx-auto xl:mx-0 my-1 w-70 h-60 md:w-100 md:h-120 md:px-3 xl:w-70 xl:h-60 xl:px-0">
-          <img src="images/image_2.png" class="w-full h-full object-cover" alt="">
-        </div>
+          <div class="md:hidden mx-auto xl:mx-0 my-1 w-70 h-60 md:w-100 md:h-120 md:px-3 xl:w-70 xl:h-60 xl:px-0">
+            <img src="images/image_2.png" class="w-full h-full object-cover object-top xl:object-cover" alt="">
+          </div>
 
-    </div>
-    </section>
+      </div>
+      </section>
 
   <!-- Subscribe -->
          <section class="md:mt-30">
@@ -516,5 +521,6 @@
             </div>
             <h4 class="mx-auto text-xs text-zinc-500 mb-4">Copyright &copy; 2026 Xpro. All Right Reseved.</h4>
          </footer>
+        <script src="style.js"></script>
 </body>
 </html>

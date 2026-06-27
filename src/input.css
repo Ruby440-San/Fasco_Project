@@ -3,6 +3,21 @@
 @import "tailwindcss";
 @plugin "daisyui";
 
+/* 1. Define the custom font file path */
+@font-face {
+    font-family: 'Digital7';
+    src: url('/fonts/digital-7.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* 2. Map it to a Tailwind utility class name in v4.0 */
+@theme {
+  --font-digital: 'Digital7', monospace;
+}
+
+
 @layer base{
   html{
   font-family: "Poppins", serif;

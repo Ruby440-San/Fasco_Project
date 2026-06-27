@@ -1,3 +1,17 @@
+// Humbager
+const humbager = document.querySelector('#humbager')
+const navMenu = document.querySelector('#popover-1')
+
+humbager.onclick = function () {
+  navMenu.classList.toggle('active')
+
+  if (this.innerHTML == '<i class="fas fa-bars text-lg"></i>') {
+    this.innerHTML = '<i class="fa-solid fa-square-xmark text-lg"></i>'
+  } else {
+    this.innerHTML = '<i class="fas fa-bars text-lg"></i>'
+  }
+}
+// New Arrivals
 let btn1 = document.getElementById('m-fashionBtn')
 let btn2 = document.getElementById('w-fashionBtn')
 let btn3 = document.getElementById('w-accessoryBtn')
@@ -104,7 +118,7 @@ viewBtn.addEventListener('click', function () {
 })
 // Countdown
 
-let countDownDate = new Date('Jun 28, 2026 15:37:25').getTime()
+let countDownDate = new Date('Jun 30, 2026 15:37:25').getTime()
 
 let x = setInterval(function () {
   let now = new Date().getTime()
@@ -144,3 +158,8 @@ nextBtn.addEventListener('click', () => {
 prevBtn.addEventListener('click', () => {
   console.log('Hiprev')
 })
+// Subscribe
+function invisible() {
+  let inputMail = document.getElementById('input')
+  inputMail.value = ''
+}
