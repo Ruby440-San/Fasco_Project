@@ -14,7 +14,7 @@
   .slider-container {
   width: 100%;
   height: auto;
-  overflow: hidden;
+  /* overflow: hidden; */
   }
 
   .mySwiper {
@@ -60,10 +60,11 @@
     }
     .btn-container{
       position: relative !important;
-      bottom: 0;
-      left: 300px !important;
+      bottom: 90px;
+      left: -120px !important;
       display: flex;
       gap: 10px;
+      z-index: 10;
     }
     .btn-circle{
       width: 40px;
@@ -94,11 +95,17 @@
     left: 25% !important;
       }
       .btn-container{
-      bottom: 0;
+      bottom: 10px;
       left: 150px !important;
       }
       .mySwiper .swiper-slide{
         margin: 0;
+      }
+    }
+    @media (min-width: 1500px){
+      .btn-container{
+        bottom: 90px;
+        left: 0px !important;
       }
     }
     /* Customer Say */
@@ -372,11 +379,7 @@
           </div>
 
   
-          <!-- arrow circle -->
-           <div class="btn-container">
-            <div class="btn-circle"><div class="swiper-button-next"></div></div>
-            <div class="btn-circle"><div class="swiper-button-prev"></div></div>
-          </div>
+          
           <!-- <div class="absolute bottom-0 -right-15 flex justify-center items-center gap-3">
             <a href="#" class="flex justify-center items-center w-10 h-10 rounded-full bg-white shadow-gray-950/50"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
             <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" /></svg>
@@ -391,6 +394,15 @@
           <div class="swiper-wrapper">
             <div class="swiper-slide">
               <img src="images/image.png" alt="" class="object-cover object-top ">
+              <!-- Discount -->
+                <div class="absolute bottom-0 top-90 left-3 lg:left-25 xl:left-3 w-48 h-28 bg-white p-4 flex flex-col justify-between z-10">
+                      <h4 class="text-md font-medium text-gray-700 flex items-center gap-2">
+                        01 
+                        <span class="inline-block w-8 h-0.5 bg-[#484848]"></span> 
+                        Spring Sale
+                      </h4>
+                      <h3 class="text-2xl tracking-tight text-[#484848] mt-3">30% OFF</h3>
+                </div>
             </div>
             <div class="swiper-slide">
               <img src="images/image_1.png" alt="" class="object-cover object-top ">
@@ -412,15 +424,11 @@
           </div>
           <div class="swiper-pagination"></div>
       </div>
-      
-      <!-- Discount -->
-          <div class="absolute bottom-0 top-90 left-3 lg:left-25 xl:left-3 w-48 h-28 bg-white p-4 flex flex-col justify-between z-10">
-                <h4 class="text-md font-medium text-gray-700 flex items-center gap-2">
-                  01 
-                  <span class="inline-block w-8 h-0.5 bg-[#484848]"></span> 
-                  Spring Sale
-                </h4>
-                <h3 class="text-2xl tracking-tight text-[#484848] mt-3">30% OFF</h3>
+
+      <!-- arrow circle -->
+           <div class="btn-container">
+            <div class="btn-circle"><div class="swiper-button-next"></div></div>
+            <div class="btn-circle"><div class="swiper-button-prev"></div></div>
           </div>
     
       </div>
