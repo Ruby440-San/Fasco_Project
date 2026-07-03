@@ -97,6 +97,68 @@ btn5.onclick = function () {
   btn4.classList.remove('bg-black', 'text-white')
   btn1.classList.remove('bg-black', 'text-white')
 }
+// Mobile Btn
+let mobileBtn1 = document.getElementById('m-fashionBtn-mobile')
+let mobileBtn2 = document.getElementById('w-fashionBtn-mobile')
+let mobileBtn3 = document.getElementById('w-accessoryBtn-mobile')
+let mobileBtn4 = document.getElementById('m-accessoryBtn-mobile')
+let mobileBtn5 = document.getElementById('discountBtn-mobile')
+
+mobileBtn1.onclick = function () {
+  hide()
+  for (let men_card of menCard) {
+    men_card.style.display = 'block'
+  }
+  mobileBtn1.classList.add('bg-black', 'text-white')
+  mobileBtn2.classList.remove('bg-black', 'text-white')
+  mobileBtn3.classList.remove('bg-black', 'text-white')
+  mobileBtn4.classList.remove('bg-black', 'text-white')
+  mobileBtn5.classList.remove('bg-black', 'text-white')
+}
+mobileBtn2.onclick = function () {
+  hide()
+  for (let women_card of womenCard) {
+    women_card.style.display = 'block'
+  }
+  mobileBtn2.classList.add('bg-black', 'text-white')
+  mobileBtn1.classList.remove('bg-black', 'text-white')
+  mobileBtn3.classList.remove('bg-black', 'text-white')
+  mobileBtn4.classList.remove('bg-black', 'text-white')
+  mobileBtn5.classList.remove('bg-black', 'text-white')
+}
+mobileBtn3.onclick = function () {
+  hide()
+  for (let women_accessory of womenAccessory) {
+    women_accessory.style.display = 'block'
+  }
+  mobileBtn3.classList.add('bg-black', 'text-white')
+  mobileBtn2.classList.remove('bg-black', 'text-white')
+  mobileBtn1.classList.remove('bg-black', 'text-white')
+  mobileBtn4.classList.remove('bg-black', 'text-white')
+  mobileBtn5.classList.remove('bg-black', 'text-white')
+}
+mobileBtn4.onclick = function () {
+  hide()
+  for (let men_accessory of menAccessory) {
+    men_accessory.style.display = 'block'
+  }
+  mobileBtn4.classList.add('bg-black', 'text-white')
+  mobileBtn1.classList.remove('bg-black', 'text-white')
+  mobileBtn2.classList.remove('bg-black', 'text-white')
+  mobileBtn3.classList.remove('bg-black', 'text-white')
+  mobileBtn5.classList.remove('bg-black', 'text-white')
+}
+mobileBtn5.onclick = function () {
+  hide()
+  for (let discount_card of discount) {
+    discount_card.style.display = 'block'
+  }
+  mobileBtn5.classList.add('bg-black', 'text-white')
+  mobileBtn2.classList.remove('bg-black', 'text-white')
+  mobileBtn3.classList.remove('bg-black', 'text-white')
+  mobileBtn4.classList.remove('bg-black', 'text-white')
+  mobileBtn1.classList.remove('bg-black', 'text-white')
+}
 // ViewMore Button
 let viewBtn = document.getElementById('viweBtn')
 viewBtn.addEventListener('click', function () {
@@ -118,7 +180,7 @@ viewBtn.addEventListener('click', function () {
 })
 // Countdown
 
-let countDownDate = new Date('Jun 30, 2026 15:37:25').getTime()
+let countDownDate = new Date('July 30, 2026 15:37:25').getTime()
 
 let x = setInterval(function () {
   let now = new Date().getTime()

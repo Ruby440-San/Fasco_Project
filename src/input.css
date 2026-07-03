@@ -2,20 +2,14 @@
 
 @import "tailwindcss";
 @plugin "daisyui";
+@import 'dseg/css/dseg.css'
 
 /* 1. Define the custom font file path */
-@font-face {
-    font-family: 'Digital7';
-    src: url('/fonts/digital-7.woff2') format('woff2');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-}
+
+
+
 
 /* 2. Map it to a Tailwind utility class name in v4.0 */
-@theme {
-  --font-digital: 'Digital7', monospace;
-}
 
 
 @layer base{
@@ -35,6 +29,7 @@
   font-weight: 400;
   font-style: normal;
   }
+  
 }
 
 @layer components{
@@ -51,6 +46,8 @@
     bg-white overflow-hidden shadow-2xl rounded-lg 
       flex flex-col md:flex-row justify-start items-center;
     }
+          
+}
 
     .card-1{
     @apply absolute top-0 left-0;
@@ -63,4 +60,3 @@
     .card-3{
     @apply absolute top-230 left-0 md:top-130 lg:top-160 xl:top-0 xl:translate-x-110 z-20 xl:z-0;
     }
-}

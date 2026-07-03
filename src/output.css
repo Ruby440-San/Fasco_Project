@@ -17,11 +17,14 @@
     --color-amber-950: oklch(27.9% 0.077 45.635);
     --color-yellow-200: oklch(94.5% 0.129 101.54);
     --color-yellow-300: oklch(90.5% 0.182 98.111);
+    --color-green-100: oklch(96.2% 0.044 156.743);
     --color-green-300: oklch(87.1% 0.15 154.449);
     --color-emerald-200: oklch(90.5% 0.093 164.15);
     --color-teal-200: oklch(91% 0.096 180.426);
     --color-cyan-300: oklch(86.5% 0.127 207.078);
+    --color-sky-200: oklch(90.1% 0.058 230.902);
     --color-sky-400: oklch(74.6% 0.16 232.661);
+    --color-blue-200: oklch(88.2% 0.059 254.128);
     --color-blue-400: oklch(70.7% 0.165 254.624);
     --color-blue-600: oklch(54.6% 0.245 262.881);
     --color-blue-950: oklch(28.2% 0.091 267.935);
@@ -29,6 +32,7 @@
     --color-violet-400: oklch(70.2% 0.183 293.541);
     --color-purple-400: oklch(71.4% 0.203 305.504);
     --color-purple-700: oklch(49.6% 0.265 301.924);
+    --color-pink-100: oklch(94.8% 0.028 342.258);
     --color-slate-900: oklch(20.8% 0.042 265.755);
     --color-gray-50: oklch(98.5% 0.002 247.839);
     --color-gray-100: oklch(96.7% 0.003 264.542);
@@ -37,6 +41,7 @@
     --color-gray-400: oklch(70.7% 0.022 261.325);
     --color-gray-500: oklch(55.1% 0.027 264.364);
     --color-gray-700: oklch(37.3% 0.034 259.733);
+    --color-gray-900: oklch(21% 0.034 264.665);
     --color-gray-950: oklch(13% 0.028 261.692);
     --color-zinc-400: oklch(70.5% 0.015 286.067);
     --color-zinc-500: oklch(55.2% 0.016 285.938);
@@ -45,6 +50,8 @@
     --color-zinc-800: oklch(27.4% 0.006 286.033);
     --color-zinc-950: oklch(14.1% 0.005 285.823);
     --color-neutral-100: oklch(97% 0 0);
+    --color-mauve-300: oklch(86.5% 0.012 325.68);
+    --color-taupe-600: oklch(43.8% 0.017 39.3);
     --color-black: #000;
     --color-white: #fff;
     --spacing: 0.25rem;
@@ -638,6 +645,9 @@
         }
       }
     }
+  }
+  .pointer-events-auto {
+    pointer-events: auto;
   }
   .countdown {
     &.countdown {
@@ -1514,9 +1524,6 @@
   .top-90 {
     top: calc(var(--spacing) * 90);
   }
-  .-right-15 {
-    right: calc(var(--spacing) * -15);
-  }
   .bottom-0 {
     bottom: 0;
   }
@@ -1610,11 +1617,20 @@
   .-z-10 {
     z-index: calc(10 * -1);
   }
+  .z-0 {
+    z-index: 0;
+  }
   .z-1 {
     z-index: 1;
   }
   .z-10 {
     z-index: 10;
+  }
+  .z-20 {
+    z-index: 20;
+  }
+  .z-100 {
+    z-index: 100;
   }
   .container {
     width: 100%;
@@ -1633,6 +1649,9 @@
     @media (width >= 96rem) {
       max-width: 96rem;
     }
+  }
+  .m-1 {
+    margin: var(--spacing);
   }
   .m-5 {
     margin: calc(var(--spacing) * 5);
@@ -1709,6 +1728,9 @@
   .my-5 {
     margin-block: calc(var(--spacing) * 5);
   }
+  .-mt-8 {
+    margin-top: calc(var(--spacing) * -8);
+  }
   .mt-1 {
     margin-top: var(--spacing);
   }
@@ -1729,6 +1751,9 @@
   }
   .mt-10 {
     margin-top: calc(var(--spacing) * 10);
+  }
+  .mt-15 {
+    margin-top: calc(var(--spacing) * 15);
   }
   .mt-20 {
     margin-top: calc(var(--spacing) * 20);
@@ -1759,6 +1784,12 @@
   }
   .-ml-5 {
     margin-left: calc(var(--spacing) * -5);
+  }
+  .ml-0 {
+    margin-left: 0;
+  }
+  .ml-1 {
+    margin-left: var(--spacing);
   }
   .ml-2 {
     margin-left: calc(var(--spacing) * 2);
@@ -1938,6 +1969,9 @@
   .h-60 {
     height: calc(var(--spacing) * 60);
   }
+  .h-75 {
+    height: calc(var(--spacing) * 75);
+  }
   .h-80 {
     height: calc(var(--spacing) * 80);
   }
@@ -2098,9 +2132,6 @@
       }
     }
   }
-  .animate-bounce {
-    animation: var(--animate-bounce);
-  }
   .animate-pulse {
     animation: var(--animate-pulse);
   }
@@ -2110,6 +2141,9 @@
   .grid-cols-1 {
     grid-template-columns: repeat(1, minmax(0, 1fr));
   }
+  .grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
   .grid-rows-3 {
     grid-template-rows: repeat(3, minmax(0, 1fr));
   }
@@ -2118,6 +2152,9 @@
   }
   .flex-col-reverse {
     flex-direction: column-reverse;
+  }
+  .flex-row {
+    flex-direction: row;
   }
   .flex-wrap {
     flex-wrap: wrap;
@@ -2142,6 +2179,9 @@
   }
   .justify-items-end {
     justify-items: end;
+  }
+  .gap-0 {
+    gap: 0;
   }
   .gap-1 {
     gap: var(--spacing);
@@ -2243,6 +2283,9 @@
   .bg-black {
     background-color: var(--color-black);
   }
+  .bg-blue-200 {
+    background-color: var(--color-blue-200);
+  }
   .bg-blue-400 {
     background-color: var(--color-blue-400);
   }
@@ -2261,6 +2304,9 @@
   .bg-gray-50 {
     background-color: var(--color-gray-50);
   }
+  .bg-gray-100 {
+    background-color: var(--color-gray-100);
+  }
   .bg-gray-200 {
     background-color: var(--color-gray-200);
   }
@@ -2270,14 +2316,23 @@
   .bg-gray-500 {
     background-color: var(--color-gray-500);
   }
+  .bg-green-100 {
+    background-color: var(--color-green-100);
+  }
   .bg-green-300 {
     background-color: var(--color-green-300);
   }
   .bg-indigo-400 {
     background-color: var(--color-indigo-400);
   }
+  .bg-mauve-300 {
+    background-color: var(--color-mauve-300);
+  }
   .bg-neutral-100 {
     background-color: var(--color-neutral-100);
+  }
+  .bg-pink-100 {
+    background-color: var(--color-pink-100);
   }
   .bg-purple-400 {
     background-color: var(--color-purple-400);
@@ -2291,8 +2346,14 @@
   .bg-red-700 {
     background-color: var(--color-red-700);
   }
+  .bg-sky-200 {
+    background-color: var(--color-sky-200);
+  }
   .bg-sky-400 {
     background-color: var(--color-sky-400);
+  }
+  .bg-taupe-600 {
+    background-color: var(--color-taupe-600);
   }
   .bg-teal-200 {
     background-color: var(--color-teal-200);
@@ -2321,6 +2382,9 @@
   .p-2 {
     padding: calc(var(--spacing) * 2);
   }
+  .p-3 {
+    padding: calc(var(--spacing) * 3);
+  }
   .p-4 {
     padding: calc(var(--spacing) * 4);
   }
@@ -2329,6 +2393,9 @@
   }
   .p-10 {
     padding: calc(var(--spacing) * 10);
+  }
+  .px-0 {
+    padding-inline: 0;
   }
   .px-1 {
     padding-inline: var(--spacing);
@@ -2752,6 +2819,13 @@
       }
     }
   }
+  .hover\:bg-gray-900 {
+    &:hover {
+      @media (hover: hover) {
+        background-color: var(--color-gray-900);
+      }
+    }
+  }
   .hover\:bg-purple-400 {
     &:hover {
       @media (hover: hover) {
@@ -2773,19 +2847,16 @@
       }
     }
   }
+  .hover\:text-white {
+    &:hover {
+      @media (hover: hover) {
+        color: var(--color-white);
+      }
+    }
+  }
   .sm\:grid-cols-2 {
     @media (width >= 40rem) {
       grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-  }
-  .md\:left-20 {
-    @media (width >= 48rem) {
-      left: calc(var(--spacing) * 20);
-    }
-  }
-  .md\:left-50 {
-    @media (width >= 48rem) {
-      left: calc(var(--spacing) * 50);
     }
   }
   .md\:m-8 {
@@ -2823,11 +2894,6 @@
       margin-bottom: calc(var(--spacing) * 7);
     }
   }
-  .md\:mb-10 {
-    @media (width >= 48rem) {
-      margin-bottom: calc(var(--spacing) * 10);
-    }
-  }
   .md\:mb-15 {
     @media (width >= 48rem) {
       margin-bottom: calc(var(--spacing) * 15);
@@ -2841,11 +2907,6 @@
   .md\:ml-30 {
     @media (width >= 48rem) {
       margin-left: calc(var(--spacing) * 30);
-    }
-  }
-  .md\:hidden {
-    @media (width >= 48rem) {
-      display: none;
     }
   }
   .md\:h-15 {
@@ -3016,14 +3077,9 @@
       left: calc(var(--spacing) * 5);
     }
   }
-  .lg\:left-25 {
+  .lg\:mt-5 {
     @media (width >= 64rem) {
-      left: calc(var(--spacing) * 25);
-    }
-  }
-  .lg\:left-30 {
-    @media (width >= 64rem) {
-      left: calc(var(--spacing) * 30);
+      margin-top: calc(var(--spacing) * 5);
     }
   }
   .lg\:mt-10 {
@@ -3054,6 +3110,11 @@
   .lg\:mb-7 {
     @media (width >= 64rem) {
       margin-bottom: calc(var(--spacing) * 7);
+    }
+  }
+  .lg\:mb-10 {
+    @media (width >= 64rem) {
+      margin-bottom: calc(var(--spacing) * 10);
     }
   }
   .lg\:ml-30 {
@@ -3096,6 +3157,11 @@
       width: calc(1 / 2 * 100%);
     }
   }
+  .lg\:w-1\/3 {
+    @media (width >= 64rem) {
+      width: calc(1 / 3 * 100%);
+    }
+  }
   .lg\:w-65 {
     @media (width >= 64rem) {
       width: calc(var(--spacing) * 65);
@@ -3109,6 +3175,11 @@
   .lg\:w-100 {
     @media (width >= 64rem) {
       width: calc(var(--spacing) * 100);
+    }
+  }
+  .lg\:w-full {
+    @media (width >= 64rem) {
+      width: 100%;
     }
   }
   .lg\:grid-cols-3 {
@@ -3131,11 +3202,6 @@
       align-items: center;
     }
   }
-  .lg\:justify-around {
-    @media (width >= 64rem) {
-      justify-content: space-around;
-    }
-  }
   .lg\:gap-0 {
     @media (width >= 64rem) {
       gap: 0;
@@ -3144,6 +3210,11 @@
   .lg\:gap-4 {
     @media (width >= 64rem) {
       gap: calc(var(--spacing) * 4);
+    }
+  }
+  .lg\:gap-5 {
+    @media (width >= 64rem) {
+      gap: calc(var(--spacing) * 5);
     }
   }
   .lg\:gap-8 {
@@ -3201,19 +3272,24 @@
       padding-block: calc(var(--spacing) * 5);
     }
   }
+  .lg\:py-10 {
+    @media (width >= 64rem) {
+      padding-block: calc(var(--spacing) * 10);
+    }
+  }
   .lg\:py-15 {
     @media (width >= 64rem) {
       padding-block: calc(var(--spacing) * 15);
     }
   }
-  .lg\:py-25 {
-    @media (width >= 64rem) {
-      padding-block: calc(var(--spacing) * 25);
-    }
-  }
   .lg\:pt-20 {
     @media (width >= 64rem) {
       padding-top: calc(var(--spacing) * 20);
+    }
+  }
+  .lg\:pt-25 {
+    @media (width >= 64rem) {
+      padding-top: calc(var(--spacing) * 25);
     }
   }
   .lg\:pb-10 {
@@ -3268,41 +3344,6 @@
       left: calc(var(--spacing) * -150);
     }
   }
-  .xl\:left-3 {
-    @media (width >= 80rem) {
-      left: calc(var(--spacing) * 3);
-    }
-  }
-  .xl\:left-5 {
-    @media (width >= 80rem) {
-      left: calc(var(--spacing) * 5);
-    }
-  }
-  .xl\:left-6 {
-    @media (width >= 80rem) {
-      left: calc(var(--spacing) * 6);
-    }
-  }
-  .xl\:left-8 {
-    @media (width >= 80rem) {
-      left: calc(var(--spacing) * 8);
-    }
-  }
-  .xl\:left-10 {
-    @media (width >= 80rem) {
-      left: calc(var(--spacing) * 10);
-    }
-  }
-  .xl\:left-15 {
-    @media (width >= 80rem) {
-      left: calc(var(--spacing) * 15);
-    }
-  }
-  .xl\:left-25 {
-    @media (width >= 80rem) {
-      left: calc(var(--spacing) * 25);
-    }
-  }
   .xl\:left-48 {
     @media (width >= 80rem) {
       left: calc(var(--spacing) * 48);
@@ -3331,6 +3372,11 @@
   .xl\:mb-8 {
     @media (width >= 80rem) {
       margin-bottom: calc(var(--spacing) * 8);
+    }
+  }
+  .xl\:mb-10 {
+    @media (width >= 80rem) {
+      margin-bottom: calc(var(--spacing) * 10);
     }
   }
   .xl\:mb-20 {
@@ -3396,6 +3442,11 @@
   .xl\:min-h-175 {
     @media (width >= 80rem) {
       min-height: calc(var(--spacing) * 175);
+    }
+  }
+  .xl\:w-1\/3 {
+    @media (width >= 80rem) {
+      width: calc(1 / 3 * 100%);
     }
   }
   .xl\:w-55 {
@@ -3469,11 +3520,6 @@
   .xl\:flex-row {
     @media (width >= 80rem) {
       flex-direction: row;
-    }
-  }
-  .xl\:gap-0 {
-    @media (width >= 80rem) {
-      gap: 0;
     }
   }
   .xl\:gap-5 {
@@ -3568,34 +3614,312 @@
       clip-path: polygon(31% 0,100% 0%,100% 100%,10% 100%);
     }
   }
-  .\32 xl\:left-10 {
-    @media (width >= 96rem) {
-      left: calc(var(--spacing) * 10);
-    }
-  }
 }
-@font-face {
-  font-family: 'Digital7';
-  src: url('/fonts/digital-7.woff2') format('woff2');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-@layer base {
-  html {
-    font-family: "Poppins", serif;
-    font-weight: 400;
-    font-style: normal;
-    background-color: #cac2c2;
-  }
-  h2 {
-    font-family: "Volkhov", serif;
-    font-weight: 400;
+@media @layer base {
+  @font-face {
+    font-family: 'DSEG7-7SEGG';
+    src: url('../fonts/DSEG7-7SEGG-CHAN/DSEG7SEGGCHAN-Regular.woff2') format('woff2'), url('../fonts/DSEG7-7SEGG-CHAN/DSEG7SEGGCHAN-Regular.woff') format('woff'), url('../fonts/DSEG7-7SEGG-CHAN/DSEG7SEGGCHAN-Regular.ttf') format('truetype');
+    font-weight: normal;
     font-style: normal;
   }
-  .timer {
-    font-family: "VT323", monospace;
-    font-weight: 400;
+  @font-face {
+    font-family: 'DSEG7-7SEGG-MINI';
+    src: url('../fonts/DSEG7-7SEGG-CHAN/DSEG7SEGGCHANMINI-Regular.woff2') format('woff2'), url('../fonts/DSEG7-7SEGG-CHAN/DSEG7SEGGCHANMINI-Regular.woff') format('woff'), url('../fonts/DSEG7-7SEGG-CHAN/DSEG7SEGGCHANMINI-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'DSEG7-Classic';
+    src: url('../fonts/DSEG7-Classic/DSEG7Classic-Bold.woff2') format('woff2'), url('../fonts/DSEG7-Classic/DSEG7Classic-Bold.woff') format('woff'), url('../fonts/DSEG7-Classic/DSEG7Classic-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'DSEG7-Classic';
+    src: url('../fonts/DSEG7-Classic/DSEG7Classic-BoldItalic.woff2') format('woff2'), url('../fonts/DSEG7-Classic/DSEG7Classic-BoldItalic.woff') format('woff'), url('../fonts/DSEG7-Classic/DSEG7Classic-BoldItalic.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+  }
+  @font-face {
+    font-family: 'DSEG7-Classic';
+    src: url('../fonts/DSEG7-Classic/DSEG7Classic-Italic.woff2') format('woff2'), url('../fonts/DSEG7-Classic/DSEG7Classic-Italic.woff') format('woff'), url('../fonts/DSEG7-Classic/DSEG7Classic-Italic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+  }
+  @font-face {
+    font-family: 'DSEG7-Classic';
+    src: url('../fonts/DSEG7-Classic/DSEG7Classic-Light.woff2') format('woff2'), url('../fonts/DSEG7-Classic/DSEG7Classic-Light.woff') format('woff'), url('../fonts/DSEG7-Classic/DSEG7Classic-Light.ttf') format('truetype');
+    font-weight: 200;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'DSEG7-Classic';
+    src: url('../fonts/DSEG7-Classic/DSEG7Classic-LightItalic.woff2') format('woff2'), url('../fonts/DSEG7-Classic/DSEG7Classic-LightItalic.woff') format('woff'), url('../fonts/DSEG7-Classic/DSEG7Classic-LightItalic.ttf') format('truetype');
+    font-weight: 200;
+    font-style: italic;
+  }
+  @font-face {
+    font-family: 'DSEG7-Classic';
+    src: url('../fonts/DSEG7-Classic/DSEG7Classic-Regular.woff2') format('woff2'), url('../fonts/DSEG7-Classic/DSEG7Classic-Regular.woff') format('woff'), url('../fonts/DSEG7-Classic/DSEG7Classic-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'DSEG7-Classic-MINI';
+    src: url('../fonts/DSEG7-Classic-MINI/DSEG7ClassicMini-Bold.woff2') format('woff2'), url('../fonts/DSEG7-Classic-MINI/DSEG7ClassicMini-Bold.woff') format('woff'), url('../fonts/DSEG7-Classic-MINI/DSEG7ClassicMini-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'DSEG7-Classic-MINI';
+    src: url('../fonts/DSEG7-Classic-MINI/DSEG7ClassicMini-BoldItalic.woff2') format('woff2'), url('../fonts/DSEG7-Classic-MINI/DSEG7ClassicMini-BoldItalic.woff') format('woff'), url('../fonts/DSEG7-Classic-MINI/DSEG7ClassicMini-BoldItalic.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+  }
+  @font-face {
+    font-family: 'DSEG7-Classic-MINI';
+    src: url('../fonts/DSEG7-Classic-MINI/DSEG7ClassicMini-Italic.woff2') format('woff2'), url('../fonts/DSEG7-Classic-MINI/DSEG7ClassicMini-Italic.woff') format('woff'), url('../fonts/DSEG7-Classic-MINI/DSEG7ClassicMini-Italic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+  }
+  @font-face {
+    font-family: 'DSEG7-Classic-MINI';
+    src: url('../fonts/DSEG7-Classic-MINI/DSEG7ClassicMini-Light.woff2') format('woff2'), url('../fonts/DSEG7-Classic-MINI/DSEG7ClassicMini-Light.woff') format('woff'), url('../fonts/DSEG7-Classic-MINI/DSEG7ClassicMini-Light.ttf') format('truetype');
+    font-weight: 200;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'DSEG7-Classic-MINI';
+    src: url('../fonts/DSEG7-Classic-MINI/DSEG7ClassicMini-LightItalic.woff2') format('woff2'), url('../fonts/DSEG7-Classic-MINI/DSEG7ClassicMini-LightItalic.woff') format('woff'), url('../fonts/DSEG7-Classic-MINI/DSEG7ClassicMini-LightItalic.ttf') format('truetype');
+    font-weight: 200;
+    font-style: italic;
+  }
+  @font-face {
+    font-family: 'DSEG7-Classic-MINI';
+    src: url('../fonts/DSEG7-Classic-MINI/DSEG7ClassicMini-Regular.woff2') format('woff2'), url('../fonts/DSEG7-Classic-MINI/DSEG7ClassicMini-Regular.woff') format('woff'), url('../fonts/DSEG7-Classic-MINI/DSEG7ClassicMini-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'DSEG7-Modern';
+    src: url('../fonts/DSEG7-Modern/DSEG7Modern-Bold.woff2') format('woff2'), url('../fonts/DSEG7-Modern/DSEG7Modern-Bold.woff') format('woff'), url('../fonts/DSEG7-Modern/DSEG7Modern-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'DSEG7-Modern';
+    src: url('../fonts/DSEG7-Modern/DSEG7Modern-BoldItalic.woff2') format('woff2'), url('../fonts/DSEG7-Modern/DSEG7Modern-BoldItalic.woff') format('woff'), url('../fonts/DSEG7-Modern/DSEG7Modern-BoldItalic.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+  }
+  @font-face {
+    font-family: 'DSEG7-Modern';
+    src: url('../fonts/DSEG7-Modern/DSEG7Modern-Italic.woff2') format('woff2'), url('../fonts/DSEG7-Modern/DSEG7Modern-Italic.woff') format('woff'), url('../fonts/DSEG7-Modern/DSEG7Modern-Italic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+  }
+  @font-face {
+    font-family: 'DSEG7-Modern';
+    src: url('../fonts/DSEG7-Modern/DSEG7Modern-Light.woff2') format('woff2'), url('../fonts/DSEG7-Modern/DSEG7Modern-Light.woff') format('woff'), url('../fonts/DSEG7-Modern/DSEG7Modern-Light.ttf') format('truetype');
+    font-weight: 200;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'DSEG7-Modern';
+    src: url('../fonts/DSEG7-Modern/DSEG7Modern-LightItalic.woff2') format('woff2'), url('../fonts/DSEG7-Modern/DSEG7Modern-LightItalic.woff') format('woff'), url('../fonts/DSEG7-Modern/DSEG7Modern-LightItalic.ttf') format('truetype');
+    font-weight: 200;
+    font-style: italic;
+  }
+  @font-face {
+    font-family: 'DSEG7-Modern';
+    src: url('../fonts/DSEG7-Modern/DSEG7Modern-Regular.woff2') format('woff2'), url('../fonts/DSEG7-Modern/DSEG7Modern-Regular.woff') format('woff'), url('../fonts/DSEG7-Modern/DSEG7Modern-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'DSEG7-Modern-MINI';
+    src: url('../fonts/DSEG7-Modern-MINI/DSEG7ModernMini-Bold.woff2') format('woff2'), url('../fonts/DSEG7-Modern-MINI/DSEG7ModernMini-Bold.woff') format('woff'), url('../fonts/DSEG7-Modern-MINI/DSEG7ModernMini-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'DSEG7-Modern-MINI';
+    src: url('../fonts/DSEG7-Modern-MINI/DSEG7ModernMini-BoldItalic.woff2') format('woff2'), url('../fonts/DSEG7-Modern-MINI/DSEG7ModernMini-BoldItalic.woff') format('woff'), url('../fonts/DSEG7-Modern-MINI/DSEG7ModernMini-BoldItalic.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+  }
+  @font-face {
+    font-family: 'DSEG7-Modern-MINI';
+    src: url('../fonts/DSEG7-Modern-MINI/DSEG7ModernMini-Italic.woff2') format('woff2'), url('../fonts/DSEG7-Modern-MINI/DSEG7ModernMini-Italic.woff') format('woff'), url('../fonts/DSEG7-Modern-MINI/DSEG7ModernMini-Italic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+  }
+  @font-face {
+    font-family: 'DSEG7-Modern-MINI';
+    src: url('../fonts/DSEG7-Modern-MINI/DSEG7ModernMini-Light.woff2') format('woff2'), url('../fonts/DSEG7-Modern-MINI/DSEG7ModernMini-Light.woff') format('woff'), url('../fonts/DSEG7-Modern-MINI/DSEG7ModernMini-Light.ttf') format('truetype');
+    font-weight: 200;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'DSEG7-Modern-MINI';
+    src: url('../fonts/DSEG7-Modern-MINI/DSEG7ModernMini-LightItalic.woff2') format('woff2'), url('../fonts/DSEG7-Modern-MINI/DSEG7ModernMini-LightItalic.woff') format('woff'), url('../fonts/DSEG7-Modern-MINI/DSEG7ModernMini-LightItalic.ttf') format('truetype');
+    font-weight: 200;
+    font-style: italic;
+  }
+  @font-face {
+    font-family: 'DSEG7-Modern-MINI';
+    src: url('../fonts/DSEG7-Modern-MINI/DSEG7ModernMini-Regular.woff2') format('woff2'), url('../fonts/DSEG7-Modern-MINI/DSEG7ModernMini-Regular.woff') format('woff'), url('../fonts/DSEG7-Modern-MINI/DSEG7ModernMini-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'DSEG14-Classic';
+    src: url('../fonts/DSEG14-Classic/DSEG14Classic-Bold.woff2') format('woff2'), url('../fonts/DSEG14-Classic/DSEG14Classic-Bold.woff') format('woff'), url('../fonts/DSEG14-Classic/DSEG14Classic-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'DSEG14-Classic';
+    src: url('../fonts/DSEG14-Classic/DSEG14Classic-BoldItalic.woff2') format('woff2'), url('../fonts/DSEG14-Classic/DSEG14Classic-BoldItalic.woff') format('woff'), url('../fonts/DSEG14-Classic/DSEG14Classic-BoldItalic.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+  }
+  @font-face {
+    font-family: 'DSEG14-Classic';
+    src: url('../fonts/DSEG14-Classic/DSEG14Classic-Italic.woff2') format('woff2'), url('../fonts/DSEG14-Classic/DSEG14Classic-Italic.woff') format('woff'), url('../fonts/DSEG14-Classic/DSEG14Classic-Italic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+  }
+  @font-face {
+    font-family: 'DSEG14-Classic';
+    src: url('../fonts/DSEG14-Classic/DSEG14Classic-Light.woff2') format('woff2'), url('../fonts/DSEG14-Classic/DSEG14Classic-Light.woff') format('woff'), url('../fonts/DSEG14-Classic/DSEG14Classic-Light.ttf') format('truetype');
+    font-weight: 200;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'DSEG14-Classic';
+    src: url('../fonts/DSEG14-Classic/DSEG14Classic-LightItalic.woff2') format('woff2'), url('../fonts/DSEG14-Classic/DSEG14Classic-LightItalic.woff') format('woff'), url('../fonts/DSEG14-Classic/DSEG14Classic-LightItalic.ttf') format('truetype');
+    font-weight: 200;
+    font-style: italic;
+  }
+  @font-face {
+    font-family: 'DSEG14-Classic';
+    src: url('../fonts/DSEG14-Classic/DSEG14Classic-Regular.woff2') format('woff2'), url('../fonts/DSEG14-Classic/DSEG14Classic-Regular.woff') format('woff'), url('../fonts/DSEG14-Classic/DSEG14Classic-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'DSEG14-Classic-MINI';
+    src: url('../fonts/DSEG14-Classic-MINI/DSEG14ClassicMini-Bold.woff2') format('woff2'), url('../fonts/DSEG14-Classic-MINI/DSEG14ClassicMini-Bold.woff') format('woff'), url('../fonts/DSEG14-Classic-MINI/DSEG14ClassicMini-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'DSEG14-Classic-MINI';
+    src: url('../fonts/DSEG14-Classic-MINI/DSEG14ClassicMini-BoldItalic.woff2') format('woff2'), url('../fonts/DSEG14-Classic-MINI/DSEG14ClassicMini-BoldItalic.woff') format('woff'), url('../fonts/DSEG14-Classic-MINI/DSEG14ClassicMini-BoldItalic.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+  }
+  @font-face {
+    font-family: 'DSEG14-Classic-MINI';
+    src: url('../fonts/DSEG14-Classic-MINI/DSEG14ClassicMini-Italic.woff2') format('woff2'), url('../fonts/DSEG14-Classic-MINI/DSEG14ClassicMini-Italic.woff') format('woff'), url('../fonts/DSEG14-Classic-MINI/DSEG14ClassicMini-Italic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+  }
+  @font-face {
+    font-family: 'DSEG14-Classic-MINI';
+    src: url('../fonts/DSEG14-Classic-MINI/DSEG14ClassicMini-Light.woff2') format('woff2'), url('../fonts/DSEG14-Classic-MINI/DSEG14ClassicMini-Light.woff') format('woff'), url('../fonts/DSEG14-Classic-MINI/DSEG14ClassicMini-Light.ttf') format('truetype');
+    font-weight: 200;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'DSEG14-Classic-MINI';
+    src: url('../fonts/DSEG14-Classic-MINI/DSEG14ClassicMini-LightItalic.woff2') format('woff2'), url('../fonts/DSEG14-Classic-MINI/DSEG14ClassicMini-LightItalic.woff') format('woff'), url('../fonts/DSEG14-Classic-MINI/DSEG14ClassicMini-LightItalic.ttf') format('truetype');
+    font-weight: 200;
+    font-style: italic;
+  }
+  @font-face {
+    font-family: 'DSEG14-Classic-MINI';
+    src: url('../fonts/DSEG14-Classic-MINI/DSEG14ClassicMini-Regular.woff2') format('woff2'), url('../fonts/DSEG14-Classic-MINI/DSEG14ClassicMini-Regular.woff') format('woff'), url('../fonts/DSEG14-Classic-MINI/DSEG14ClassicMini-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'DSEG14-Modern';
+    src: url('../fonts/DSEG14-Modern/DSEG14Modern-Bold.woff2') format('woff2'), url('../fonts/DSEG14-Modern/DSEG14Modern-Bold.woff') format('woff'), url('../fonts/DSEG14-Modern/DSEG14Modern-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'DSEG14-Modern';
+    src: url('../fonts/DSEG14-Modern/DSEG14Modern-BoldItalic.woff2') format('woff2'), url('../fonts/DSEG14-Modern/DSEG14Modern-BoldItalic.woff') format('woff'), url('../fonts/DSEG14-Modern/DSEG14Modern-BoldItalic.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+  }
+  @font-face {
+    font-family: 'DSEG14-Modern';
+    src: url('../fonts/DSEG14-Modern/DSEG14Modern-Italic.woff2') format('woff2'), url('../fonts/DSEG14-Modern/DSEG14Modern-Italic.woff') format('woff'), url('../fonts/DSEG14-Modern/DSEG14Modern-Italic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+  }
+  @font-face {
+    font-family: 'DSEG14-Modern';
+    src: url('../fonts/DSEG14-Modern/DSEG14Modern-Light.woff2') format('woff2'), url('../fonts/DSEG14-Modern/DSEG14Modern-Light.woff') format('woff'), url('../fonts/DSEG14-Modern/DSEG14Modern-Light.ttf') format('truetype');
+    font-weight: 200;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'DSEG14-Modern';
+    src: url('../fonts/DSEG14-Modern/DSEG14Modern-LightItalic.woff2') format('woff2'), url('../fonts/DSEG14-Modern/DSEG14Modern-LightItalic.woff') format('woff'), url('../fonts/DSEG14-Modern/DSEG14Modern-LightItalic.ttf') format('truetype');
+    font-weight: 200;
+    font-style: italic;
+  }
+  @font-face {
+    font-family: 'DSEG14-Modern';
+    src: url('../fonts/DSEG14-Modern/DSEG14Modern-Regular.woff2') format('woff2'), url('../fonts/DSEG14-Modern/DSEG14Modern-Regular.woff') format('woff'), url('../fonts/DSEG14-Modern/DSEG14Modern-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'DSEG14-Modern-MINI';
+    src: url('../fonts/DSEG14-Modern-MINI/DSEG14ModernMini-Bold.woff2') format('woff2'), url('../fonts/DSEG14-Modern-MINI/DSEG14ModernMini-Bold.woff') format('woff'), url('../fonts/DSEG14-Modern-MINI/DSEG14ModernMini-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'DSEG14-Modern-MINI';
+    src: url('../fonts/DSEG14-Modern-MINI/DSEG14ModernMini-BoldItalic.woff2') format('woff2'), url('../fonts/DSEG14-Modern-MINI/DSEG14ModernMini-BoldItalic.woff') format('woff'), url('../fonts/DSEG14-Modern-MINI/DSEG14ModernMini-BoldItalic.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+  }
+  @font-face {
+    font-family: 'DSEG14-Modern-MINI';
+    src: url('../fonts/DSEG14-Modern-MINI/DSEG14ModernMini-Italic.woff2') format('woff2'), url('../fonts/DSEG14-Modern-MINI/DSEG14ModernMini-Italic.woff') format('woff'), url('../fonts/DSEG14-Modern-MINI/DSEG14ModernMini-Italic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+  }
+  @font-face {
+    font-family: 'DSEG14-Modern-MINI';
+    src: url('../fonts/DSEG14-Modern-MINI/DSEG14ModernMini-Light.woff2') format('woff2'), url('../fonts/DSEG14-Modern-MINI/DSEG14ModernMini-Light.woff') format('woff'), url('../fonts/DSEG14-Modern-MINI/DSEG14ModernMini-Light.ttf') format('truetype');
+    font-weight: 200;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'DSEG14-Modern-MINI';
+    src: url('../fonts/DSEG14-Modern-MINI/DSEG14ModernMini-LightItalic.woff2') format('woff2'), url('../fonts/DSEG14-Modern-MINI/DSEG14ModernMini-LightItalic.woff') format('woff'), url('../fonts/DSEG14-Modern-MINI/DSEG14ModernMini-LightItalic.ttf') format('truetype');
+    font-weight: 200;
+    font-style: italic;
+  }
+  @font-face {
+    font-family: 'DSEG14-Modern-MINI';
+    src: url('../fonts/DSEG14-Modern-MINI/DSEG14ModernMini-Regular.woff2') format('woff2'), url('../fonts/DSEG14-Modern-MINI/DSEG14ModernMini-Regular.woff') format('woff'), url('../fonts/DSEG14-Modern-MINI/DSEG14ModernMini-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'DSEGWeather';
+    src: url('../fonts/DSEGWeather/DSEGWeather.woff2') format('woff2'), url('../fonts/DSEGWeather/DSEGWeather.woff') format('woff'), url('../fonts/DSEGWeather/DSEGWeather.ttf') format('truetype');
+    font-weight: normal;
     font-style: normal;
   }
 }
@@ -3676,55 +4000,55 @@
       width: calc(var(--spacing) * 160);
     }
   }
-  .card-1 {
-    position: absolute;
+}
+.card-1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.card-2 {
+  position: absolute;
+  top: calc(var(--spacing) * 115);
+  left: 0;
+  z-index: 10;
+  @media (width >= 64rem) {
+    top: calc(var(--spacing) * 80);
+  }
+  @media (width >= 80rem) {
     top: 0;
+  }
+  @media (width >= 80rem) {
     left: 0;
   }
-  .card-2 {
-    position: absolute;
-    top: calc(var(--spacing) * 115);
-    left: 0;
-    z-index: 10;
-    @media (width >= 64rem) {
-      top: calc(var(--spacing) * 80);
-    }
-    @media (width >= 80rem) {
-      top: 0;
-    }
-    @media (width >= 80rem) {
-      left: 0;
-    }
-    @media (width >= 80rem) {
-      --tw-translate-x: calc(var(--spacing) * 65);
-      translate: var(--tw-translate-x) var(--tw-translate-y);
-    }
-    @media (width >= 80rem) {
-      --tw-translate-y: calc(var(--spacing) * -8);
-      translate: var(--tw-translate-x) var(--tw-translate-y);
-    }
+  @media (width >= 80rem) {
+    --tw-translate-x: calc(var(--spacing) * 65);
+    translate: var(--tw-translate-x) var(--tw-translate-y);
   }
-  .card-3 {
-    position: absolute;
-    top: calc(var(--spacing) * 230);
-    left: 0;
-    z-index: 20;
-    @media (width >= 48rem) {
-      top: calc(var(--spacing) * 130);
-    }
-    @media (width >= 64rem) {
-      top: calc(var(--spacing) * 160);
-    }
-    @media (width >= 80rem) {
-      top: 0;
-    }
-    @media (width >= 80rem) {
-      z-index: 0;
-    }
-    @media (width >= 80rem) {
-      --tw-translate-x: calc(var(--spacing) * 110);
-      translate: var(--tw-translate-x) var(--tw-translate-y);
-    }
+  @media (width >= 80rem) {
+    --tw-translate-y: calc(var(--spacing) * -8);
+    translate: var(--tw-translate-x) var(--tw-translate-y);
+  }
+}
+.card-3 {
+  position: absolute;
+  top: calc(var(--spacing) * 230);
+  left: 0;
+  z-index: 20;
+  @media (width >= 48rem) {
+    top: calc(var(--spacing) * 130);
+  }
+  @media (width >= 64rem) {
+    top: calc(var(--spacing) * 160);
+  }
+  @media (width >= 80rem) {
+    top: 0;
+  }
+  @media (width >= 80rem) {
+    z-index: 0;
+  }
+  @media (width >= 80rem) {
+    --tw-translate-x: calc(var(--spacing) * 110);
+    translate: var(--tw-translate-x) var(--tw-translate-y);
   }
 }
 @layer base {
