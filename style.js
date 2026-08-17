@@ -206,20 +206,6 @@ let x = setInterval(function () {
     document.getElementById('seconds').innerHTML = 0
   }
 }, 1000)
-// Customer Say
-const container = document.querySelector('.testimonial-container')
-const cusCards = document.querySelector('.cus-card')
-
-const prevBtn = document.querySelector('.prev-btn')
-const nextBtn = document.querySelector('.next-btn')
-
-nextBtn.addEventListener('click', () => {
-  console.log('Hinext')
-})
-
-prevBtn.addEventListener('click', () => {
-  console.log('Hiprev')
-})
 // Subscribe
 function invisible() {
   let inputMail = document.getElementById('input')
