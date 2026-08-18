@@ -180,7 +180,7 @@ viewBtn.addEventListener('click', function () {
 })
 // Countdown
 
-let countDownDate = new Date('July 30, 2026 15:37:25').getTime()
+let countDownDate = new Date('August 30, 2026 15:37:25').getTime()
 
 let x = setInterval(function () {
   let now = new Date().getTime()
