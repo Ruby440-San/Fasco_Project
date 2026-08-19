@@ -71,6 +71,9 @@
         .fashionSwiper{
           width: 100%;
         }
+        .next-container {
+        display: none;
+        }
         .next-container .circle{
           right: 110px;
         }
@@ -763,7 +766,7 @@
           </div>
           <!-- Swiper Pagination -->
           <div class="swiper-pagination"></div>
-          <div class="next-container">
+          <div class="next-container hidden md:block lg:block">
             <div class="circle">
               <div class="swiper-button-next"></div>
             </div>
@@ -886,24 +889,25 @@
     </section>
 
   <!-- Subscribe -->
-         <section class="md:mt-30">
-          <div class="container min-h-auto mx-auto px-10 py-5 flex flex-col lg:flex-row">
-            <div class="w-85 h-130">
-              <img src="images/image 2.png" alt="" class="w-full h-full object-contain lg:object-right">
-            </div>
-            <div class="flex justify-center items-center h-130">
-              <div class="flex flex-col justify-center items-center">
-                <h2 class="text-2xl text-[#484848] font-medium w-full mb-2 lg:text-4xl text-center">Subscribe To Our Newsletter</h2>
-                <p class="text-center text-zinc-500 leading-relaxed max-w-xl">Lorem ipsum dolor sit amet consectetur quasi incidunt, sequi excepturi. Unde, quia omnis? Dolorum, suscipit.</p>
-                <input type="email" class="mt-10 bg-white w-full p-4 outline-none shadow-2xl" placeholder="ruby110@gmail.com">
-                <button class="btn btn-neutral px-10 mt-8 hover:bg-gray-300 hover:border-none hover:text-black">Subscribe Now</button>
-              </div>
-            </div>
-            <div class="w-85 h-130">
-              <img src="images/image 3.png" alt="" class="w-full h-full object-contain lg:object-left">
-            </div>
+         <section>
+      <div class="container min-h-auto mx-auto px-2 md:px-10 lg:px-15 xl:px-15 py-5 flex flex-col lg:flex-row">
+        <div class="w-85 h-130">
+          <img src="images/image 2.png" alt="" class="w-full h-full object-contain lg:object-right">
+        </div>
+        <div class="flex justify-center items-center h-130 mx-auto">
+          <div class="flex flex-col justify-center items-center">
+            <h2 class="text-2xl text-[#484848] font-medium w-full mb-2 lg:text-4xl text-center">Subscribe To Our Newsletter</h2>
+            <p class="text-center text-zinc-500 leading-relaxed max-w-xl">Lorem ipsum dolor sit amet consectetur quasi incidunt, sequi excepturi. Unde, quia omnis? Dolorum, suscipit.</p>
+            <input type="email" class="mt-10 bg-white w-full p-4 outline-none shadow-2xl" placeholder="ruby110@gmail.com" id="input">
+            <button class="btn btn-neutral px-10 mt-8 hover:bg-gray-300 hover:border-none hover:text-black" onclick="invisible()">Subscribe Now</button>
           </div>
-         </section>
+        </div>
+        <div class="w-85 h-130">
+          <img src="images/image 3.png" alt="" class="w-full h-full object-contain lg:object-left">
+        </div>
+      </div>
+    <hr class="text-gray-300">
+    </section>
 
          <!-- Footer -->
          <footer class="container mx-auto px-5 lg:px-20 flex flex-col justify-center items-center">
